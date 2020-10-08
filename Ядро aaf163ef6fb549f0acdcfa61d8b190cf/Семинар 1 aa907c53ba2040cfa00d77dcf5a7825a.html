@@ -1,0 +1,644 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Семинар 1</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="aa907c53-ba20-40cf-a00d-77dcf5a7825a" class="page sans"><header><h1 class="page-title">Семинар 1</h1></header><div class="page-body"><h2 id="a9a328da-2c72-407d-a0e7-6ccabe448583" class="">1 Семинар</h2><ul id="e3ef75e2-177b-4867-8207-8151d764f6cb" class="bulleted-list"><li><mark class="highlight-purple_background">Микрокод</mark> — программа, реализующая набор инструкций процессора. Так же как одна инструкция языка высокого уровня преобразуется в серию машинных инструкций, в процессоре, использующем микрокод, каждая машинная инструкция реализуется в виде серии микроинструкций — микропрограммы, микрокода.</li></ul><ul id="55765d2a-bf27-4c2a-a60a-a7709a3ea1d3" class="bulleted-list"><li>Для каждого из серьезных периферийных устройств, есть отдельная прошивка, кот. может исполняться как на цп, так и на внутреннем контроллере</li></ul><ul id="7c9a139b-e163-4a0b-b325-f811e19170c3" class="bulleted-list"><li>На прикладном уровне процессов представляется как совокупность регистров (general purpose и module specific), портов ввода-вывода и доступа к памяти</li></ul><ul id="2c521533-b214-4484-a919-c32ed1ab89cc" class="bulleted-list"><li>То, каким образом регистры используются в программе зависит от abi (application binary interface)</li></ul><ul id="8f69d53c-89c3-4cdb-927b-36270db3a751" class="bulleted-list"><li>DR - debug регистры</li></ul><ul id="30f453c9-4e02-4682-a5de-36df371403e3" class="bulleted-list"><li>процессор запускается в классическом 16-битном real mode, переключается в 32-битный protected mode в PEI фазе, затем переключается в 32 или 64-битный режим (зависит от платформы)</li></ul><p id="1cd0c2b6-a713-4417-9bbc-d34618077908" class="">
+</p><ol id="be78d9be-3d92-485c-9787-7cef5618ab54" class="numbered-list" start="1"><li>Ожидает подключения отладчика GDB (если данный код активен).</li></ol><ol id="dea4a9ca-db24-4821-98fc-0ac7b57c020b" class="numbered-list" start="2"><li>Получает актуальную дату из UEFI Runtime Services и выводит её в консоль.</li></ol><ol id="9449f59b-450c-45a5-b34e-9f90b974a60c" class="numbered-list" start="3"><li>Выделяет память для аргументов загрузки ядра JOS.</li></ol><ol id="366f4fed-5ba0-4b89-a8b6-b8e19465aed4" class="numbered-list" start="4"><li>Инициализирует параметры графики.</li></ol><ol id="c02bd993-a214-4b25-bb66-22ba31296c8e" class="numbered-list" start="5"><li>Загружает ядро JOS из файловой системы по пути <code>EFI\BOOT\kernel</code> и отображает в память.</li></ol><ol id="49c63135-aa60-45ed-9163-56b52bd7276b" class="numbered-list" start="6"><li>Настраивает адресное пространство для работы ядра и завершает выполнение UEFI Boot Services.</li></ol><ol id="66b1229d-22e9-4332-aa25-17e78019458d" class="numbered-list" start="7"><li>Выполняет переход к точке входа ядра JOS.</li></ol><p id="af4b3256-fbfe-42bf-9ede-aa7c099f20c5" class="">
+</p><h3 id="f684a25a-d509-4f41-8507-29e7567060db" class="">Порядок загрузки</h3><p id="e3de5301-7689-48dd-8ffa-99a692a17640" class="">Bootloader.c
+↓
+trampoline.c 
+↓ (вызов ядра)
+head64      kern/bootstrap.S
+↓
+entry()        kern/entry.S
+↓
+i386_init     kern/init.c
+<mark class="highlight-gray">Дизасемиблированный код ядра находится в kernel.asm</mark></p><p id="5f4f19cc-6077-40ac-966d-6d21e6f9f422" class="">
+</p><ul id="2e62b2b5-6757-4c9e-a682-0375d6ff01d8" class="toggle"><li><details open=""><summary>Как передаются параметры UEFI загрузчика в ядро, и куда они сохраняются?</summary><figure id="032e062d-d58e-4c91-b108-16a395e9fc15" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled.png"><img style="width:1266px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled.png"/></a><figcaption>Booltlader.c выделение памяти под LoagerParams</figcaption></figure><p id="fbec079e-b9f9-400c-84ab-90a202e86f6d" class="">Это опечатка, под Loader_block pointer подразумевается LoaderParams
+Сохраняются в _head64 в r12, потом возвращаются обратно в rcx и передаются в entry, где затем сохраняются в uefi_lp</p><figure id="9c0b113e-a58d-4ca0-aa8c-20141e98f210" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%201.png"><img style="width:1282px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%201.png"/></a><figcaption>kernel.asm  disassembly of _head64 from Bootloader.c</figcaption></figure></details></li></ul><ul id="58a68d8e-cd58-41db-a540-0f31897f79b6" class="toggle"><li><details open=""><summary>Какой стек использует C-код ядра, и где он выделяется?</summary><p id="9675b733-ecfa-494b-a63c-843f9ef86083" class="">указатель на стек помещается в bootstacktop, затем в регистр rsp</p><figure id="4983d391-4fbd-4006-9971-9c29067f78bb" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%202.png"><img style="width:1524px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%202.png"/></a><figcaption>kernel.asm (строки с 937)</figcaption></figure><figure id="e05c6748-aee6-4d4c-9142-ad62ff3f1e49" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%203.png"><img style="width:1006px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%203.png"/></a><figcaption>Выделение памяти для стека и loader parameters (entry.S)</figcaption></figure></details></li></ul><ul id="4a2e4916-673c-4048-a31b-d799f4ef9d11" class="toggle"><li><details open=""><summary>В какой момент код начинает выполняться по &quot;верхним&quot; адресам?</summary><figure id="d0a51ace-a15c-4ff7-9d9c-c1f92f4374cc" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%204.png"><img style="width:972px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%204.png"/></a><figcaption>Верхние и нижние адреса (wikipedia x86-64) </figcaption></figure><p id="3095f145-b521-4804-9866-c60a45cfa2bf" class="">Верхние адреса начинаются с 0x8040000000, выше располагается виртуальная память; карта памяти находится в inc/memlayout.h</p><figure id="7d78d3e0-9abd-4767-be77-6775f4f356e4" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%205.png"><img style="width:1176px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%205.png"/></a><figcaption>Bootstrap.s Переход к верхним адресам и перенос LoadParams в rcx</figcaption></figure></details></li></ul><ul id="79b277e8-571e-4906-aebb-934c057ae390" class="toggle"><li><details open=""><summary>Какие значения CR3 и GDT используются на протяжении работы ядра?</summary><p id="94f804f3-564d-4186-ab1b-542eef60442e" class="">Значение CR3 = 0x1501000</p><figure id="e6f2cdfe-b0f8-4f67-9b70-31d5688cf206" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%206.png"><img style="width:624px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%206.png"/></a><figcaption>Bootloader.c</figcaption></figure><figure id="817e1f49-2202-4b05-90e3-72de6ffaea58" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%207.png"><img style="width:856px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%207.png"/></a><figcaption>Устанавливается значение регистра </figcaption></figure><p id="c8588b46-f827-40c1-ab05-0e84db667339" class="">Значение GDT устанавливается, но не меняется</p><figure id="d51b3281-0f76-4eb7-8a24-fbc8ad3c15d5" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%208.png"><img style="width:2494px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%208.png"/></a></figure><figure id="40a68f31-9e74-4a1d-89b5-4fced3580877" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%209.png"><img style="width:1290px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%209.png"/></a></figure><figure id="7caa5d7f-765e-4c79-8e45-0720b457708b" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%2010.png"><img style="width:1250px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%2010.png"/></a></figure><p id="8344aeda-853a-4199-b01f-cf1fb65f72b7" class="">
+</p></details></li></ul><ul id="313497b2-f9fe-4e72-94af-49d602baef14" class="toggle"><li><details open=""><summary>Почему в стартовом коде не требуется обновлять GDT в отличие от CR3?</summary><p id="327fb0fd-1de0-45ed-a9d6-68c5b113baff" class="">Таблица, на которую указывает CR3, в отличие от GDT, создается в bootstrap.S</p><figure id="8e971397-4c50-47a2-8a85-34d9271c9537" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%2011.png"><img style="width:1338px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%201%20aa907c53ba2040cfa00d77dcf5a7825a/Untitled%2011.png"/></a><figcaption>Bootstrap.S</figcaption></figure><p id="d300ed8b-5013-4d4f-8cf5-83fa7a55fd2e" class="">LoaderPkg/UDK/UefiCpuPkg/CpuDxe/CpuGdt.c
+LoaderPkg/UDK/OvmfPkg/Library/LoadLinuxLib/LinuxGdt.c
+содержат информацию об инициализации GDT</p><p id="696c7b75-f193-4b59-8be0-bf59bd6f8776" class="">
+</p></details></li></ul></div></article></body></html>
