@@ -1,4 +1,5 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Семинар 1</title><style>
+/* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
 	-webkit-print-color-adjust: exact;
@@ -212,7 +213,7 @@ ul > li {
 }
 
 ul.to-do-list {
-	text-indent: -1.7em;
+	padding-inline-start: 0;
 }
 
 ul.to-do-list > li {
@@ -282,6 +283,33 @@ ol > li {
 	margin-right: 1em;
 }
 
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
 time {
 	opacity: 0.5;
 }
@@ -319,7 +347,7 @@ img.icon {
 	display: block;
 	object-fit: cover;
 	width: 100%;
-	height: 30vh;
+	max-height: 30vh;
 }
 
 .page-header-icon {
@@ -460,151 +488,172 @@ blockquote {
 	margin-top: 0.25em;
 }
 
-.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
 .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
 .highlight-default {
+	color: rgba(55, 53, 47, 1);
 }
 .highlight-gray {
-	color: rgb(155,154,151);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .highlight-brown {
-	color: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .highlight-orange {
-	color: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .highlight-yellow {
-	color: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .highlight-teal {
-	color: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .highlight-blue {
-	color: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .highlight-purple {
-	color: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .highlight-pink {
-	color: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .highlight-red {
-	color: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .highlight-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .highlight-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .highlight-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .highlight-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .highlight-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .highlight-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .highlight-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .highlight-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .highlight-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
 .block-color-default {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray {
-	color: rgba(55, 53, 47, 0.6);
-	fill: rgba(55, 53, 47, 0.6);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .block-color-brown {
-	color: rgb(100,71,58);
-	fill: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .block-color-orange {
-	color: rgb(217,115,13);
-	fill: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .block-color-yellow {
-	color: rgb(223,171,1);
-	fill: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .block-color-teal {
-	color: rgb(15,123,108);
-	fill: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .block-color-blue {
-	color: rgb(11,110,153);
-	fill: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .block-color-purple {
-	color: rgb(105,64,165);
-	fill: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .block-color-pink {
-	color: rgb(173,26,114);
-	fill: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .block-color-red {
-	color: rgb(224,62,62);
-	fill: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .block-color-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .block-color-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .block-color-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .block-color-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .block-color-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .block-color-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .block-color-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .block-color-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .block-color-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
-.select-value-color-default { background-color: rgba(206,205,202,0.5); }
-.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
-.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
-.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
-.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
-.select-value-color-green { background-color: rgba(0,135,107,0.2); }
-.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
-.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
-.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
-.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
 
 .checkbox {
 	display: inline-flex;
@@ -624,8 +673,8 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="aa907c53-ba20-40cf-a00d-77dcf5a7825a" class="page sans"><header><h1 class="page-title">Семинар 1</h1></header><div class="page-body"><h2 id="a9a328da-2c72-407d-a0e7-6ccabe448583" class="">1 Семинар</h2><ul id="e3ef75e2-177b-4867-8207-8151d764f6cb" class="bulleted-list"><li><mark class="highlight-purple_background">Микрокод</mark> — программа, реализующая набор инструкций процессора. Так же как одна инструкция языка высокого уровня преобразуется в серию машинных инструкций, в процессоре, использующем микрокод, каждая машинная инструкция реализуется в виде серии микроинструкций — микропрограммы, микрокода.</li></ul><ul id="55765d2a-bf27-4c2a-a60a-a7709a3ea1d3" class="bulleted-list"><li>Для каждого из серьезных периферийных устройств, есть отдельная прошивка, кот. может исполняться как на цп, так и на внутреннем контроллере</li></ul><ul id="7c9a139b-e163-4a0b-b325-f811e19170c3" class="bulleted-list"><li>На прикладном уровне процессов представляется как совокупность регистров (general purpose и module specific), портов ввода-вывода и доступа к памяти</li></ul><ul id="2c521533-b214-4484-a919-c32ed1ab89cc" class="bulleted-list"><li>То, каким образом регистры используются в программе зависит от abi (application binary interface)</li></ul><ul id="8f69d53c-89c3-4cdb-927b-36270db3a751" class="bulleted-list"><li>DR - debug регистры</li></ul><ul id="30f453c9-4e02-4682-a5de-36df371403e3" class="bulleted-list"><li>процессор запускается в классическом 16-битном real mode, переключается в 32-битный protected mode в PEI фазе, затем переключается в 32 или 64-битный режим (зависит от платформы)</li></ul><p id="1cd0c2b6-a713-4417-9bbc-d34618077908" class="">
-</p><ol id="be78d9be-3d92-485c-9787-7cef5618ab54" class="numbered-list" start="1"><li>Ожидает подключения отладчика GDB (если данный код активен).</li></ol><ol id="dea4a9ca-db24-4821-98fc-0ac7b57c020b" class="numbered-list" start="2"><li>Получает актуальную дату из UEFI Runtime Services и выводит её в консоль.</li></ol><ol id="9449f59b-450c-45a5-b34e-9f90b974a60c" class="numbered-list" start="3"><li>Выделяет память для аргументов загрузки ядра JOS.</li></ol><ol id="366f4fed-5ba0-4b89-a8b6-b8e19465aed4" class="numbered-list" start="4"><li>Инициализирует параметры графики.</li></ol><ol id="c02bd993-a214-4b25-bb66-22ba31296c8e" class="numbered-list" start="5"><li>Загружает ядро JOS из файловой системы по пути <code>EFI\BOOT\kernel</code> и отображает в память.</li></ol><ol id="49c63135-aa60-45ed-9163-56b52bd7276b" class="numbered-list" start="6"><li>Настраивает адресное пространство для работы ядра и завершает выполнение UEFI Boot Services.</li></ol><ol id="66b1229d-22e9-4332-aa25-17e78019458d" class="numbered-list" start="7"><li>Выполняет переход к точке входа ядра JOS.</li></ol><p id="af4b3256-fbfe-42bf-9ede-aa7c099f20c5" class="">
+</style></head><body><article id="aa907c53-ba20-40cf-a00d-77dcf5a7825a" class="page sans"><header><h1 class="page-title">Семинар 1</h1><p class="page-description"></p></header><div class="page-body"><h2 id="a9a328da-2c72-407d-a0e7-6ccabe448583" class="">1 Семинар</h2><ul id="e3ef75e2-177b-4867-8207-8151d764f6cb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple_background">Микрокод</mark> — программа, реализующая набор инструкций процессора. Так же как одна инструкция языка высокого уровня преобразуется в серию машинных инструкций, в процессоре, использующем микрокод, каждая машинная инструкция реализуется в виде серии микроинструкций — микропрограммы, микрокода.</li></ul><ul id="55765d2a-bf27-4c2a-a60a-a7709a3ea1d3" class="bulleted-list"><li style="list-style-type:disc">Для каждого из серьезных периферийных устройств, есть отдельная прошивка, кот. может исполняться как на цп, так и на внутреннем контроллере</li></ul><ul id="7c9a139b-e163-4a0b-b325-f811e19170c3" class="bulleted-list"><li style="list-style-type:disc">На прикладном уровне процессов представляется как совокупность регистров (general purpose и module specific), портов ввода-вывода и доступа к памяти</li></ul><ul id="2c521533-b214-4484-a919-c32ed1ab89cc" class="bulleted-list"><li style="list-style-type:disc">То, каким образом регистры используются в программе зависит от abi (application binary interface)</li></ul><ul id="8f69d53c-89c3-4cdb-927b-36270db3a751" class="bulleted-list"><li style="list-style-type:disc">DR - debug регистры</li></ul><ul id="30f453c9-4e02-4682-a5de-36df371403e3" class="bulleted-list"><li style="list-style-type:disc">процессор запускается в классическом 16-битном real mode, переключается в 32-битный protected mode в PEI фазе, затем переключается в 32 или 64-битный режим (зависит от платформы)</li></ul><p id="1cd0c2b6-a713-4417-9bbc-d34618077908" class="">
+</p><ol type="1" id="be78d9be-3d92-485c-9787-7cef5618ab54" class="numbered-list" start="1"><li>Ожидает подключения отладчика GDB (если данный код активен).</li></ol><ol type="1" id="dea4a9ca-db24-4821-98fc-0ac7b57c020b" class="numbered-list" start="2"><li>Получает актуальную дату из UEFI Runtime Services и выводит её в консоль.</li></ol><ol type="1" id="9449f59b-450c-45a5-b34e-9f90b974a60c" class="numbered-list" start="3"><li>Выделяет память для аргументов загрузки ядра JOS.</li></ol><ol type="1" id="366f4fed-5ba0-4b89-a8b6-b8e19465aed4" class="numbered-list" start="4"><li>Инициализирует параметры графики.</li></ol><ol type="1" id="c02bd993-a214-4b25-bb66-22ba31296c8e" class="numbered-list" start="5"><li>Загружает ядро JOS из файловой системы по пути <code>EFI\BOOT\kernel</code> и отображает в память.</li></ol><ol type="1" id="49c63135-aa60-45ed-9163-56b52bd7276b" class="numbered-list" start="6"><li>Настраивает адресное пространство для работы ядра и завершает выполнение UEFI Boot Services.</li></ol><ol type="1" id="66b1229d-22e9-4332-aa25-17e78019458d" class="numbered-list" start="7"><li>Выполняет переход к точке входа ядра JOS.</li></ol><p id="af4b3256-fbfe-42bf-9ede-aa7c099f20c5" class="">
 </p><h3 id="f684a25a-d509-4f41-8507-29e7567060db" class="">Порядок загрузки</h3><p id="e3de5301-7689-48dd-8ffa-99a692a17640" class="">Bootloader.c
 ↓
 trampoline.c 

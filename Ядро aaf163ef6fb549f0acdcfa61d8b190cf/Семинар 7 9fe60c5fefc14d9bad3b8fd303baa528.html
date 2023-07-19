@@ -1,4 +1,5 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Семинар 7</title><style>
+/* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
 	-webkit-print-color-adjust: exact;
@@ -212,7 +213,7 @@ ul > li {
 }
 
 ul.to-do-list {
-	text-indent: -1.7em;
+	padding-inline-start: 0;
 }
 
 ul.to-do-list > li {
@@ -282,6 +283,33 @@ ol > li {
 	margin-right: 1em;
 }
 
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
 time {
 	opacity: 0.5;
 }
@@ -319,7 +347,7 @@ img.icon {
 	display: block;
 	object-fit: cover;
 	width: 100%;
-	height: 30vh;
+	max-height: 30vh;
 }
 
 .page-header-icon {
@@ -460,151 +488,172 @@ blockquote {
 	margin-top: 0.25em;
 }
 
-.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
 .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
 .highlight-default {
+	color: rgba(55, 53, 47, 1);
 }
 .highlight-gray {
-	color: rgb(155,154,151);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .highlight-brown {
-	color: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .highlight-orange {
-	color: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .highlight-yellow {
-	color: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .highlight-teal {
-	color: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .highlight-blue {
-	color: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .highlight-purple {
-	color: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .highlight-pink {
-	color: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .highlight-red {
-	color: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .highlight-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .highlight-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .highlight-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .highlight-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .highlight-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .highlight-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .highlight-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .highlight-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .highlight-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
 .block-color-default {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray {
-	color: rgba(55, 53, 47, 0.6);
-	fill: rgba(55, 53, 47, 0.6);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .block-color-brown {
-	color: rgb(100,71,58);
-	fill: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .block-color-orange {
-	color: rgb(217,115,13);
-	fill: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .block-color-yellow {
-	color: rgb(223,171,1);
-	fill: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .block-color-teal {
-	color: rgb(15,123,108);
-	fill: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .block-color-blue {
-	color: rgb(11,110,153);
-	fill: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .block-color-purple {
-	color: rgb(105,64,165);
-	fill: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .block-color-pink {
-	color: rgb(173,26,114);
-	fill: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .block-color-red {
-	color: rgb(224,62,62);
-	fill: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .block-color-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .block-color-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .block-color-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .block-color-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .block-color-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .block-color-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .block-color-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .block-color-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .block-color-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
-.select-value-color-default { background-color: rgba(206,205,202,0.5); }
-.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
-.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
-.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
-.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
-.select-value-color-green { background-color: rgba(0,135,107,0.2); }
-.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
-.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
-.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
-.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
 
 .checkbox {
 	display: inline-flex;
@@ -624,6 +673,168 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="9fe60c5f-efc1-4d9b-ad3b-8fd303baa528" class="page sans"><header><h1 class="page-title">Семинар 7</h1></header><div class="page-body"><ul id="d72a2517-052f-408c-8810-af42c3b51a67" class="bulleted-list"><li>можно поставить breakpoint указав * адрес вектора прерываний
+</style></head><body><article id="9fe60c5f-efc1-4d9b-ad3b-8fd303baa528" class="page sans"><header><h1 class="page-title">Семинар 7</h1><p class="page-description"></p></header><div class="page-body"><ul id="d72a2517-052f-408c-8810-af42c3b51a67" class="bulleted-list"><li style="list-style-type:disc">можно поставить breakpoint указав * адрес вектора прерываний
 тогда останов произойдет, пока еще сохранен стек, что позволит установит, в какой момент произошло прерывание</li></ul><p id="38fb342d-ce3d-4155-8ad3-58170283a0ac" class="">
-</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="407c272d-a47e-4409-9ebf-7b2a92ba0eb5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Fuzzing</strong> or <strong>fuzz testing</strong> is an automated <a href="https://en.wikipedia.org/wiki/Software_testing">software testing</a> technique that involves providing invalid, unexpected, or <a href="https://en.wikipedia.org/wiki/Random_data">random data</a> as inputs to a <a href="https://en.wikipedia.org/wiki/Computer_program">computer program</a>. The program is then monitored for exceptions such as <a href="https://en.wikipedia.org/wiki/Crash_(computing)">crashes</a>, failing built-in code <a href="https://en.wikipedia.org/wiki/Assertion_(software_development)">assertions</a>, or potential <a href="https://en.wikipedia.org/wiki/Memory_leak">memory leaks</a>. Typically, fuzzers are used to test programs that take structured inputs. This structure is specified, e.g., in a <a href="https://en.wikipedia.org/wiki/File_format">file format</a> or <a href="https://en.wikipedia.org/wiki/Communications_protocol">protocol</a> and distinguishes valid from invalid input. An effective fuzzer generates semi-valid inputs that are &quot;valid enough&quot; in that they are not directly rejected by the parser, but do create unexpected behaviors deeper in the program and are &quot;invalid enough&quot; to expose <a href="https://en.wikipedia.org/wiki/Corner_case">corner cases</a> that have not been properly dealt with.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9f93e08d-6992-4bbe-b9dd-16e2fd26bb8e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">For the purpose of security, input that crosses a <a href="https://en.wikipedia.org/wiki/Trust_boundary">trust boundary</a> is often the most interesting. For example, it is more important to fuzz code that handles the upload of a file by any user than it is to fuzz the code that parses a configuration file that is accessible only to a privileged user.</div></figure></div></article></body></html>
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="407c272d-a47e-4409-9ebf-7b2a92ba0eb5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Fuzzing</strong> or <strong>fuzz testing</strong> is an automated <a href="https://en.wikipedia.org/wiki/Software_testing">software testing</a> technique that involves providing invalid, unexpected, or <a href="https://en.wikipedia.org/wiki/Random_data">random data</a> as inputs to a <a href="https://en.wikipedia.org/wiki/Computer_program">computer program</a>. The program is then monitored for exceptions such as <a href="https://en.wikipedia.org/wiki/Crash_(computing)">crashes</a>, failing built-in code <a href="https://en.wikipedia.org/wiki/Assertion_(software_development)">assertions</a>, or potential <a href="https://en.wikipedia.org/wiki/Memory_leak">memory leaks</a>. Typically, fuzzers are used to test programs that take structured inputs. This structure is specified, e.g., in a <a href="https://en.wikipedia.org/wiki/File_format">file format</a> or <a href="https://en.wikipedia.org/wiki/Communications_protocol">protocol</a> and distinguishes valid from invalid input. An effective fuzzer generates semi-valid inputs that are &quot;valid enough&quot; in that they are not directly rejected by the parser, but do create unexpected behaviors deeper in the program and are &quot;invalid enough&quot; to expose <a href="https://en.wikipedia.org/wiki/Corner_case">corner cases</a> that have not been properly dealt with.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9f93e08d-6992-4bbe-b9dd-16e2fd26bb8e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">For the purpose of security, input that crosses a <a href="https://en.wikipedia.org/wiki/Trust_boundary">trust boundary</a> is often the most interesting. For example, it is more important to fuzz code that handles the upload of a file by any user than it is to fuzz the code that parses a configuration file that is accessible only to a privileged user.</div></figure><hr id="eb34554c-2aa4-4223-ab08-67a6513bbb31"/><h1 id="1618548f-f490-4706-b033-af42bfbd243b" class="">Теория</h1><ul id="a361ea1f-cd26-470a-8b4c-85430e1e0981" class="toggle"><li><details open=""><summary>Protected-Mode Address Translation</summary><figure id="b274d5a8-997c-42eb-a5b2-aafec90f5d52"><div class="source"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/MIT6_828F12_lec4_handout.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b9a655ee-5c8f-40f9-ac46-43ac26931f30/MIT6_828F12_lec4_handout.pdf</a></div></figure></details></li></ul><ul id="75f3b18b-839d-4354-b56e-1c3aa27ae9ca" class="toggle"><li><details open=""><summary>PageInfo</summary><figure id="04bb72d7-ebfa-46ba-8163-6b02262fb875" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled.png"><img style="width:1244px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled.png"/></a><figcaption>memlayout.h</figcaption></figure></details></li></ul><ul id="9e6c7b11-033d-45ac-b5d2-6be0baee8286" class="toggle"><li><details open=""><summary>EFI_MEMORY_DESCRIPTOR</summary><figure id="8107bb8e-91be-45f5-bfa6-b066bdb9a397" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%201.png"><img style="width:1494px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%201.png"/></a><figcaption>uefi.h</figcaption></figure></details></li></ul><ul id="0434f2cc-1f71-4da5-99b1-bab7b0f04934" class="toggle"><li><details open=""><summary>Переход на высокие адреса</summary><figure id="c0c225fd-4872-4766-93ea-9b93afd6ba54" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%202.png"><img style="width:1774px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%202.png"/></a><figcaption>kern/kernel.ld</figcaption></figure><figure id="b7dab1d2-a21c-4652-b251-81f18b9c5aad" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%203.png"><img style="width:1244px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%203.png"/></a></figure><p id="0e518efe-668b-4feb-b795-fdb45d7efee6" class="">Ядро переходит на высокие адреса  в bootstrap.s</p></details></li></ul><ul id="d7610f37-d72b-4f43-87ab-f614b4307f5e" class="toggle"><li><details open=""><summary>4-LEVEL PAGING</summary><p id="edd4f1c4-7b65-42f6-8270-ae965084e4f7" class="">Both paging modes translate linear addresses using a hierarchy of in-memory paging structures located using the contents of CR3, which is used to locate the first paging-structure. For 4-level paging, this is the PML4 table, and for 5-level paging it is the PML5 table.</p><figure id="ee24672c-c556-4a18-a3a3-080f4c5f9b4f" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%204.png"><img style="width:1230px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%204.png"/></a><figcaption>у нас такой линейный адрес, потому что размер 4кб
+</figcaption></figure><ul id="d68a8b40-bdf5-47f4-a3d2-e87f953a096b" class="toggle"><li><details open=""><summary>1гб и 2мб</summary><figure id="a3def80e-90dd-40e8-9cbc-1c2fd0e317e0" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%205.png"><img style="width:1218px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%205.png"/></a></figure><figure id="13e1e3a5-6404-407e-9ed8-b2447b86f216" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%206.png"><img style="width:1232px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%206.png"/></a></figure><figure id="289daf8c-323e-40f7-89f8-bb0693a32a7d" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%207.png"><img style="width:1182px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%207.png"/></a></figure><figure id="942855eb-8a62-4690-929d-d60be45c3881" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%208.png"><img style="width:1175px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%208.png"/></a></figure></details></li></ul><figure id="ad8173b6-cb4f-4287-b0f6-a20697ba991c" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%209.png"><img style="width:1574px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%209.png"/></a></figure><figure id="7bd85d63-b227-4517-b268-f15dec965276"><a href="https://cirosantilli.com/x86-paging" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">x86 Paging Tutorial</div><div class="bookmark-description">This could happen for example due to a programming error: but there are cases where it is not a bug, for example in Linux when: the program wants to increase its stack. It just tries to accesses a certain byte in a given possible range, and if the OS is happy it adds that page to the process address space, otherwise, it sends a signal to the process.</div></div><div class="bookmark-href"><img src="https://raw.githubusercontent.com/cirosantilli/media/master/ID_photo_of_Ciro_Santilli_taken_in_2013.jpg" class="icon bookmark-icon"/>https://cirosantilli.com/x86-paging</div></div><img src="https://raw.githubusercontent.com/cirosantilli/media/master/x86_page_entry_format.png" class="bookmark-image"/></a></figure><figure id="d94cfd80-b585-4469-b0d3-8d61e4cec267" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2010.png"><img style="width:780px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2010.png"/></a></figure><figure id="39472fe0-94e4-4bf7-8760-6e0c8fd65d66" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2011.png"><img style="width:2206px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2011.png"/></a></figure></details></li></ul><ul id="911fff57-733d-4870-a5b8-cbcc3376ecd1" class="toggle"><li><details open=""><summary>Отличие виртуального адреса от линейного</summary><p id="54f0f2aa-72d2-4d74-9081-b5e58f51bd20" class="">In x86 terminology, a virtual address consists of a segment selector and an offset within the segment. A linear address is what you get after segment translation but before page translation. A physical address is what you finally get after both segment and page translation and what ultimately goes out on the hardware bus to your RAM.</p><figure id="3492c375-8812-4944-bbe9-b7a05ff5d97f" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2012.png"><img style="width:1256px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2012.png"/></a></figure></details></li></ul><ul id="c130bf92-7f3c-440d-97e7-2f8c1676df66" class="toggle"><li><details open=""><summary> Privilege Levels</summary><p id="a9f65148-8a88-4531-8eba-778cefd33c26" class="">The concept of privilege is implemented by assigning a value from zero to
+three to key objects recognized by the processor. This value is called the
+privilege level. The value zero represents the greatest privilege, the
+value three represents the least privilege. The following
+processor-recognized objects contain privilege levels:</p><ul id="60cf3198-b2b1-48bc-96a1-64dc0eebfdc1" class="bulleted-list"><li style="list-style-type:disc">Descriptors contain a field called the descriptor privilege level
+(DPL).</li></ul><ul id="cb854bf0-d9e3-4fa5-85fc-4b83d8ac2176" class="bulleted-list"><li style="list-style-type:disc">Selectors contain a field called the requestor&#x27;s privilege level
+(RPL). The RPL is intended to represent the privilege level of
+the procedure that originates a selector.</li></ul><ul id="5f430c34-6274-4b67-90f3-d60df4c55348" class="bulleted-list"><li style="list-style-type:disc">An internal processor register records the current privilege level
+(CPL). Normally the CPL is equal to the DPL of the segment that
+the processor is currently executing. CPL changes as control is
+transferred to segments with differing DPLs.</li></ul><p id="c4e704ac-6ce5-467a-b867-0770c9306924" class="">The processor automatically evaluates the right of a procedure to access
+another segment by comparing the CPL to one or more other privilege levels.
+The evaluation is performed at the time the selector of a descriptor is
+loaded into a segment register. The criteria used for evaluating access to
+data differs from that for evaluating transfers of control to executable
+segments; therefore, the two types of access are considered separately in
+the following sections.</p></details></li></ul><ul id="8157cf7e-1792-4545-b7c3-97515d1cb465" class="toggle"><li><details open=""><summary>Bootstrap.s</summary><pre id="ba0ab14d-ec08-4368-a02f-a196c16a34ce" class="code"><code># Build an early boot pml4 at pml4phys (physical = virtual for it).
+
+  # Initialize the page tables.
+  movl $pml4,%edi
+  xorl %eax,%eax
+  movl $PML_SIZE,%ecx  # moving these many words to the 11 pages
+  rep stosl
+
+  # Creating a 4G boot page table...
+  # Setting the 4-level page table with only the second entry needed (PML4).
+  movl $pml4,%eax
+  movl $pdpt1, %ebx
+  orl $PTE_P,%ebx
+  orl $PTE_W,%ebx
+  movl %ebx,(%eax)
+
+  movl $pdpt2, %ebx
+  orl $PTE_P,%ebx
+  orl $PTE_W,%ebx
+  movl %ebx,0x8(%eax)
+
+  # Setting the 3rd level page table (PDPE).
+  # 4 entries (counter in ecx), point to the next four physical pages (pgdirs).
+  # pgdirs in 0xa0000--0xd000.
+  movl $pdpt1,%edi
+  movl $pde1,%ebx
+  orl $PTE_P,%ebx
+  orl $PTE_W,%ebx
+  movl %ebx,(%edi)
+
+  movl $pdpt2,%edi
+  movl $pde2,%ebx
+  orl $PTE_P,%ebx
+  orl $PTE_W,%ebx
+  # 2nd entry - 0x8040000000
+  movl %ebx,0x8(%edi)
+
+  # Setting the pgdir so that the LA=PA.
+  # Mapping first 1024mb of mem at KERNBASE.
+  movl $512,%ecx
+  # Start at the end and work backwards
+  movl $pde1,%edi
+  movl $pde2,%ebx
+  # 1st entry - 0x8040000000
+
+  # PTE_P|PTE_W|PTE_MBZ
+  movl $0x00000183,%eax
+1:
+  movl %eax,(%edi)
+  movl %eax,(%ebx)
+  addl $0x8,%edi
+  addl $0x8,%ebx
+  addl $0x00200000,%eax
+  subl $1,%ecx
+  cmp $0x0,%ecx
+  jne 1b
+
+  # Update CR3 register.
+  movq $pml4,%rax
+  movq %rax, %cr3
+
+  # Transition to high mem entry code and pass LoadParams address.
+  movabs $entry,%rax
+  movq %r12, %rcx
+  jmpq *%rax</code></pre><figure id="1c2ee243-df3f-4902-9d40-3669ea3c1f90" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2013.png"><img style="width:788px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2013.png"/></a><figcaption>mmu.h</figcaption></figure></details></li></ul><p id="0032256a-803e-4ee8-8f44-f63cb8437111" class="">В boot/boot.S мы переходим в protected mode и можем обращаться только к виртуальным адресам. </p><p id="fd5a8517-2d80-463a-93d2-fcc674d57a18" class="">gRT-&gt;SetVirtualAddressMap загружает таблицу страниц и включает виртуальную адресацию, которая пока равна физической в Bootloader.c</p><figure id="d35c3171-116b-4c31-b628-215cffa4859a" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2014.png"><img style="width:1746px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2014.png"/></a></figure><figure id="c5ff4f5b-b179-4901-817b-55d8de6d0143"><a href="https://github.com/Babtsov/jos/tree/master/lab2" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Babtsov/jos</div><div class="bookmark-description">lab link: https://pdos.csail.mit.edu/6.828/2017/labs/lab2/ potentially useful ans: http://web.mit.edu/~ternus/Public/Public_old/pmap.c Before configuring the paging system with mem_init, we note that the virtual memory subsystem has already been configured in entry.S using the following code: entry_pgdir (the page directory) is defined as: __attribute__((__aligned__(PGSIZE))) pde_t entry_pgdir[NPDENTRIES] = { // Map VA&#x27;s [0, 4MB) to PA&#x27;s [0, 4MB) [0] = ((uintptr_t)entry_pgtable - KERNBASE) + PTE_P, // Map VA&#x27;s [KERNBASE, KERNBASE+4MB) to PA&#x27;s [0, 4MB) [KERNBASE&gt;&gt;PDXSHIFT] = ((uintptr_t)entry_pgtable - KERNBASE) + PTE_P + PTE_W }; so we notice that the current high virtual addresses are from 0xf0000000 to 0xf03fffff and from 0x00000000 to 0x003fffff.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/Babtsov/jos/tree/master/lab2</div></div><img src="https://avatars1.githubusercontent.com/u/13504226?s=400&amp;v=4" class="bookmark-image"/></a></figure><figure id="3c9c09b3-cb94-4db2-93db-d135e2680eed"><a href="https://pdos.csail.mit.edu/6.828/2017/readings/i386/s05_02.htm" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">80386 Programmer&#x27;s Reference Manual -- Section 5.2</div><div class="bookmark-description">A page table is simply an array of 32-bit page specifiers. A page table is itself a page, and therefore contains 4 Kilobytes of memory or at most 1K 32-bit entries. Two levels of tables are used to address a page of memory. At the higher level is a page directory.</div></div><div class="bookmark-href">https://pdos.csail.mit.edu/6.828/2017/readings/i386/s05_02.htm</div></div><img src="https://pdos.csail.mit.edu/6.828/2017/readings/i386/fig5-9.gif" class="bookmark-image"/></a></figure><hr id="d45aadff-6a6c-421a-baf8-7c8a6c450963"/><h1 id="d162a0ad-dbf4-426b-85f3-43922beb0c97" class="">Вопросы</h1><ul id="178d1999-1d9a-422b-ada2-76a4ffb6dc2a" class="toggle"><li><details open=""><summary><strong>Таблица</strong></summary><pre id="6d98b151-b8e1-4404-acc3-21d83d1b6d48" class="code"><code>* Virtual memory map:                                Permissions
+ *                                                    kernel/user
+ *
+ *     1 TB --------&gt;  +------------------------------+
+ *                     |                              | RW/--
+ *                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *                     :              .               : 0x1
+ *                     :              .               :
+ *                     :              .               :
+ *                     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~| RW/--
+ *                     |                              | RW/--
+ *                     |   Remapped Physical Memory   | RW/--
+ *                     |                              | RW/--
+ *    KERNBASE, ----&gt;  +------------------------------+ 0x8040000000    --+
+ *    KSTACKTOP        |     CPU0&#x27;s Kernel Stack      | RW/--  KSTKSIZE   |
+ *                     | - - - - - - - - - - - - - - -|                   |
+ *                     |      Invalid Memory (*)      | --/--  KSTKGAP    |
+ *                     +------------------------------+                   |
+ *                     |     CPU1&#x27;s Kernel Stack      | RW/--  KSTKSIZE   |
+ *                     | - - - - - - - - - - - - - - -|                 PTSIZE
+ *                     |      Invalid Memory (*)      | --/--  KSTKGAP    |
+ *                     +------------------------------+                   |
+ *                     :              .               :                   |
+ *                     :              .               :                   |
+ *    MMIOLIM ------&gt;  +------------------------------+ 0x803fe00000    --+
+ *                     |       Memory-mapped I/O      | RW/--  PTSIZE
+ * ULIM, MMIOBASE --&gt;  +------------------------------+ 0x803fc00000
+ *                     |          RO PAGES            | R-/R-
+ *                     .                              .
+ *                     .                              .        400 * PTSIZE
+ *                     .                              .
+ *    UPAGES    ----&gt;  +------------------------------+ 0x8000dc0000
+ *                     |           RO ENVS            | R-/R-  PTSIZE
+ * UENVS -----------&gt;  +------------------------------+ 0x8000da0000
+ *                     |                              |
+ *                     |                              |
+ *                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *                     .                              .
+ *                     .                              .
+ * UTOP,               .                              .
+ * UXSTACKTOP ------&gt;  +------------------------------+ 0x8000000000
+ *                     |     User Exception Stack     | RW/RW  PGSIZE
+ *                     +------------------------------+ 0x7ffffff000
+ *                     |       Empty Memory (*)       | --/--  PGSIZE
+ *    USTACKTOP  ---&gt;  +------------------------------+ 0x7fffffe000
+ *                     |      Normal User Stack       | RW/RW  PGSIZE
+ *                     +------------------------------+ 0x7fffffd000
+ *                     |                              |
+ *                     |                              |
+ *                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *                     .                              .
+ *                     .                              .
+ *                     .                              .
+ *                     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+ *                     |     Program Data &amp; Heap      |
+ *    UTEXT --------&gt;  +------------------------------+ 0x00800000
+ *    PFTEMP -------&gt;  |       Empty Memory (*)       |        2* PTSIZE
+ *                     |                              |
+ *    UTEMP --------&gt;  +------------------------------+ 0x00400000      --+
+ *                     |       Empty Memory (*)       |                   |
+ *                     | - - - - - - - - - - - - - - -|                   |
+ *                     |  User STAB Data (optional)   |                2* PTSIZE
+ *    USTABDATA ----&gt;  +------------------------------+ 0x00200000        |
+ *                     |       Empty Memory (*)       |                   |
+ *    0 ------------&gt;  +------------------------------+                 --+</code></pre><p id="68c8fbbd-5ff8-41f3-be8e-2717a0d9d33a" class="">
+</p></details></li></ul><ul id="ca4fd91d-824e-484e-abb5-eacd393b0104" class="toggle"><li><details open=""><summary>Мы поместили пользовательские процессы и ядро в одном адресном пространстве. Почему пользовательские программы не смогут читать или писать в память ядра? Какие конкретные механизмы защищают память ядра?</summary><p id="7c708d94-acba-493e-9064-c4b2c12d3234" class="">U — User, пользовательская страница. Если установлен — страница доступна из пользовательского режима, если нет — только из режима ядра.</p><p id="e69f8689-120b-4c7d-8533-5de9f0ab9012" class="">Это связано с тем, что виртуальная память разделена на сегменты по ULIM и UTOP. (ULIM, 4GB) - это только ядро, (UTOP, ULIM] и ядро, и пользовательская среда могут читать, а [0x0, UTOP] - пространство пользовательской среды. Эти пространства памяти защищены битами разрешения, такими как PTE_W (с возможностью записи) и PTE_U (пользователь), которые устанавливаются во флагах записи таблицы / каталога страниц.</p><p id="2273306c-ec3b-42ff-a7e4-e49ad65ddece" class="">Конкретные механизмы, используемые для защиты, - это текущий уровень привилегий (CPL), младшие 2 бита CS. CPL = 0 - это привилегированный O / S, CPL = 3 - пользовательский. Это используется для определения текущего режима и того, можем ли мы писать в адреса виртуальной памяти.</p><p id="79d2c98c-bc3c-4aae-abc5-f202df4380fb" class="">
+</p></details></li></ul><ul id="7814c36e-6941-4f49-93ac-1eaa4d5f0232" class="toggle"><li><details open=""><summary>Каков максимальный объем физической памяти, который данная операционная система может поддерживать? Почему?</summary><figure id="df00b705-f0a6-419d-8bc4-28afb8a4048e" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2015.png"><img style="width:1352px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2015.png"/></a><figcaption>pmap.h</figcaption></figure><figure id="379ac26c-9a18-4439-a605-cc399f229d48" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2016.png"><img style="width:1976px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%207%209fe60c5fefc14d9bad3b8fd303baa528/Untitled%2016.png"/></a><figcaption>pmap.c</figcaption></figure><p id="002b8dd7-5fb3-4e12-8f6e-0569ef01e40e" class="">
+</p></details></li></ul><ul id="c64d3373-8b2f-4a8d-a162-6fd635b0c8a0" class="toggle"><li><details open=""><summary>Изучите еще раз механизм настройки таблицы страниц в kern/bootstrap.S. Сразу после включения страничной организации памяти RIP по-прежнему имеет низкое значение (чуть более 21 МБ). В какой точке мы переходим к использованию RIP выше KERNBASE? Что делает возможным продолжение выполнения с низким RIP между моментом, когда мы включаем страничную организацию, и моментом, когда мы начинаем использовать RIP выше KERNBASE? Почему этот переход необходим?</summary><p id="09310a52-7e6b-40c8-9787-f3cfee8d6269" class="">первые 1024мб памяти отображены как на kernbase так и на свои физические адреса, а регистр все еще не обновлен</p></details></li></ul><ul id="a39a7361-b591-4636-b423-7f5994ac7a37" class="toggle"><li><details open=""><summary>(qemu) info mem</summary><p id="6a487d81-14fa-4764-bffd-813c89128e33" class="">0000000000001000-00000000003d3000 00000000003d2000 -rw
+000000003fff0000-0000000043200000 0000000003210000 -rw
+000000803c42e000-000000803e42e000 0000000002000000 ur-
+000000803ec2e000-000000803ee03000 00000000001d5000 -rw
+000000803fc00000-000000803fc0c000 000000000000c000 -rw
+000000803fff0000-0000008240000000 0000000200010000 -rw
+0000010000000000-0000010000002000 0000000000002000 ur-
+00000100001ff000-0000010000219000 000000000001a000 ur-
+00000100401e2000-00000100401f3000 0000000000011000 ur-
+00000100401f6000-00000100401f8000 0000000000002000 ur-
+00000100401fe000-0000010041200000 0000000001002000 ur-
+0000010080000000-0000010080002000 0000000000002000 ur-
+0000010080200000-0000010080209000 0000000000009000 ur-
+0000010080400000-0000010080403000 0000000000003000 ur-</p></details></li></ul><p id="4f420908-c9f4-41c0-b5fb-4ea6e1b9e32d" class="">
+</p></div></article></body></html>

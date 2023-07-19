@@ -1,4 +1,5 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Семинар 4</title><style>
+/* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
 	-webkit-print-color-adjust: exact;
@@ -212,7 +213,7 @@ ul > li {
 }
 
 ul.to-do-list {
-	text-indent: -1.7em;
+	padding-inline-start: 0;
 }
 
 ul.to-do-list > li {
@@ -282,6 +283,33 @@ ol > li {
 	margin-right: 1em;
 }
 
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
 time {
 	opacity: 0.5;
 }
@@ -319,7 +347,7 @@ img.icon {
 	display: block;
 	object-fit: cover;
 	width: 100%;
-	height: 30vh;
+	max-height: 30vh;
 }
 
 .page-header-icon {
@@ -460,151 +488,172 @@ blockquote {
 	margin-top: 0.25em;
 }
 
-.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
 .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
 .highlight-default {
+	color: rgba(55, 53, 47, 1);
 }
 .highlight-gray {
-	color: rgb(155,154,151);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .highlight-brown {
-	color: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .highlight-orange {
-	color: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .highlight-yellow {
-	color: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .highlight-teal {
-	color: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .highlight-blue {
-	color: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .highlight-purple {
-	color: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .highlight-pink {
-	color: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .highlight-red {
-	color: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .highlight-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .highlight-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .highlight-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .highlight-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .highlight-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .highlight-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .highlight-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .highlight-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .highlight-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
 .block-color-default {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray {
-	color: rgba(55, 53, 47, 0.6);
-	fill: rgba(55, 53, 47, 0.6);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .block-color-brown {
-	color: rgb(100,71,58);
-	fill: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .block-color-orange {
-	color: rgb(217,115,13);
-	fill: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .block-color-yellow {
-	color: rgb(223,171,1);
-	fill: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .block-color-teal {
-	color: rgb(15,123,108);
-	fill: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .block-color-blue {
-	color: rgb(11,110,153);
-	fill: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .block-color-purple {
-	color: rgb(105,64,165);
-	fill: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .block-color-pink {
-	color: rgb(173,26,114);
-	fill: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .block-color-red {
-	color: rgb(224,62,62);
-	fill: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .block-color-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .block-color-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .block-color-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .block-color-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .block-color-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .block-color-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .block-color-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .block-color-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .block-color-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
-.select-value-color-default { background-color: rgba(206,205,202,0.5); }
-.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
-.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
-.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
-.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
-.select-value-color-green { background-color: rgba(0,135,107,0.2); }
-.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
-.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
-.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
-.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
 
 .checkbox {
 	display: inline-flex;
@@ -624,10 +673,10 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="eeece58d-e590-4485-9945-674ea1ab398d" class="page sans"><header><h1 class="page-title">Семинар 4</h1></header><div class="page-body"><p id="1f3b3a1c-3d67-4c38-910c-70bd07879dfa" class="">
-</p><h1 id="d76421f1-9002-4726-8360-a75a6096ea84" class="">Семинар 4</h1><ul id="0bf50767-2096-416d-afa0-2b74ee7cd8f5" class="bulleted-list"><li>file.c → ( 1 препроцессирование - раскрываются include и define ) → (2 компиляция) → file.o (объектный файл в формате ELF) → (3 линковка) → file.o (вызовы функций между разными модулями разрешены; файл можно выполнять)</li></ul><ul id="f07c7820-fd1b-4f13-aee2-1f61e72d57d4" class="bulleted-list"><li><a href="http://file.so">file.so</a> (shared object) на этапе линковки используется. Линковщик проверяет наличие функций, но код функции в результирующий файл не попадает</li></ul><ul id="d7424229-2dbb-4448-b07c-b8647791b15c" class="bulleted-list"><li>readelf -a path/to/exe/file</li></ul><p id="c1e23080-d263-4513-b76f-48ef7ad44d0c" class="">
+</style></head><body><article id="eeece58d-e590-4485-9945-674ea1ab398d" class="page sans"><header><h1 class="page-title">Семинар 4</h1><p class="page-description"></p></header><div class="page-body"><p id="1f3b3a1c-3d67-4c38-910c-70bd07879dfa" class="">
+</p><h1 id="d76421f1-9002-4726-8360-a75a6096ea84" class="">Семинар 4</h1><ul id="0bf50767-2096-416d-afa0-2b74ee7cd8f5" class="bulleted-list"><li style="list-style-type:disc">file.c → ( 1 препроцессирование - раскрываются include и define ) → (2 компиляция) → file.o (объектный файл в формате ELF) → (3 линковка) → file.o (вызовы функций между разными модулями разрешены; файл можно выполнять)</li></ul><ul id="f07c7820-fd1b-4f13-aee2-1f61e72d57d4" class="bulleted-list"><li style="list-style-type:disc"><a href="http://file.so">file.so</a> (shared object) на этапе линковки используется. Линковщик проверяет наличие функций, но код функции в результирующий файл не попадает</li></ul><ul id="d7424229-2dbb-4448-b07c-b8647791b15c" class="bulleted-list"><li style="list-style-type:disc">readelf -a path/to/exe/file</li></ul><p id="c1e23080-d263-4513-b76f-48ef7ad44d0c" class="">
 </p><p id="3c48113e-f4ab-40ab-807d-def7d1f30232" class="">
-</p><ul id="c1666e78-2abc-4755-aa48-2de9519f78f0" class="bulleted-list"><li>start (kern/entry.S)</li></ul><ul id="6983f687-dc49-4a99-95dd-e06d39010446" class="bulleted-list"><li>i386_init (kern/init.c)</li></ul><ul id="e88bdec9-72f3-43a3-b8af-bec0ca877b03" class="bulleted-list"><li>cons_init</li></ul><ul id="a5982941-0963-4cf7-99f1-695e189e8482" class="bulleted-list"><li>env_init</li></ul><ul id="4db38c42-cf73-4379-9c1f-550908fd535e" class="bulleted-list"><li>env_create</li></ul><ul id="0c0a039c-c92b-47d0-a05c-efb222f9ab8b" class="bulleted-list"><li>sched_yield<ul id="9e13d623-acfa-4d68-a9b2-ca1d7d396b6f" class="bulleted-list"><li>env_run<ul id="c588dfb3-b69c-4fc8-87ae-e8dd0fb83709" class="bulleted-list"><li>env_pop_tf</li></ul></li></ul></li></ul><p id="16eea19b-2fd8-4944-a684-fb083f00d52a" class="">
+</p><ul id="c1666e78-2abc-4755-aa48-2de9519f78f0" class="bulleted-list"><li style="list-style-type:disc">start (kern/entry.S)</li></ul><ul id="6983f687-dc49-4a99-95dd-e06d39010446" class="bulleted-list"><li style="list-style-type:disc">i386_init (kern/init.c)</li></ul><ul id="e88bdec9-72f3-43a3-b8af-bec0ca877b03" class="bulleted-list"><li style="list-style-type:disc">cons_init</li></ul><ul id="a5982941-0963-4cf7-99f1-695e189e8482" class="bulleted-list"><li style="list-style-type:disc">env_init</li></ul><ul id="4db38c42-cf73-4379-9c1f-550908fd535e" class="bulleted-list"><li style="list-style-type:disc">env_create</li></ul><ul id="0c0a039c-c92b-47d0-a05c-efb222f9ab8b" class="bulleted-list"><li style="list-style-type:disc">sched_yield<ul id="9e13d623-acfa-4d68-a9b2-ca1d7d396b6f" class="bulleted-list"><li style="list-style-type:circle">env_run<ul id="c588dfb3-b69c-4fc8-87ae-e8dd0fb83709" class="bulleted-list"><li style="list-style-type:square">env_pop_tf</li></ul></li></ul></li></ul><p id="16eea19b-2fd8-4944-a684-fb083f00d52a" class="">
 </p><figure id="c6cdcc68-2ee2-4e4b-aeb5-dc6e2cea7426" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled.png"><img style="width:1364px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled.png"/></a></figure><ul id="f1f97dfb-c2d6-47f1-978e-a5f4ff7ac60a" class="toggle"><li><details open=""><summary>ELF file</summary><p id="41f0174e-0be7-4ebb-8ac7-065248ea6afe" class="">
 </p><figure id="0c2167d0-36e0-4957-9944-5ffa38f01470" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%201.png"><img style="width:930px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%201.png"/></a><figcaption>В load_icode используется loadable file :))</figcaption></figure><figure id="a01c980c-3cda-438e-8f52-c5d00fda8039" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%202.png"><img style="width:1302px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%202.png"/></a></figure><figure id="33accc8f-df0e-4aaf-969d-155dc2eca078" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%203.png"><img style="width:1220px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%203.png"/></a></figure><p id="ecd4efa6-acc3-4c14-ab42-f039c7931b12" class=""><strong>Задание 5</strong>
 Ищем тут запись с типом SHT_STRTAB и сохраняем ее offset - это таблица строк, где записаны имена секций и символов
@@ -637,5 +686,5 @@ blockquote {
 </p></details></li></ul><ul id="79222734-54e3-4691-b802-06442d5db3a7" class="toggle"><li><details open=""><summary>Abbreviation table </summary><figure id="3b4e255b-67b6-4f01-a03e-04f79f94710a" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%209.png"><img style="width:622px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%209.png"/></a></figure><figure id="042ed93d-9315-49f2-861c-c791c18bce5a" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2010.png"><img style="width:636px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2010.png"/></a></figure><figure id="dbdd07ac-051d-48c6-b590-f2809b383ba9" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2011.png"><img style="width:860px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2011.png"/></a></figure><p id="c8f260ae-7051-4433-875d-bf2531730c4e" class="">
 </p><figure id="7b7a52f1-bc2c-42bb-9a89-a862ed3abc98" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2012.png"><img style="width:1190px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2012.png"/></a></figure><figure id="1f181fd9-7e9d-481d-b401-d79a429ec456" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2013.png"><img style="width:1208px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2013.png"/></a></figure></details></li></ul><ul id="068325e2-8ebe-4ab4-a4c8-361f2ef14fed" class="toggle"><li><details open=""><summary>Почему после если shed_yield() пустой, управление вообще передается в _panic?</summary><p id="a0f5864f-c8f9-46c9-b329-1f1a4379c1bf" class="">У функции i386_init нет инструкции ret, поэтому когда вызов yield возвращается, управление тупо идет дальше, а там как раз эта функция.</p><figure id="73a07e58-7b46-4b60-afd8-fbc6561834f5" class="image"><a href="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2014.png"><img style="width:761px" src="%D0%A1%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80%204%20eeece58de59044859945674ea1ab398d/Untitled%2014.png"/></a><figcaption>Спасибо, Коля)</figcaption></figure><p id="0e0a6a80-08c0-4114-bf5c-6ad8a6e14305" class="">
 </p></details></li></ul><ul id="d734a687-69cb-4265-8cb7-3efa0b365cdf" class="toggle"><li><details open=""><summary>Задание 5</summary><h3 id="f648bcb2-973a-425f-a9b5-973a22d09190" class="">Последовательность запуска</h3><p id="d1f2ee8f-6f3f-4185-86bd-e303d67ba08d" class="">-env.c bind_functions() → kdebug.c find_function() → address_by_fname()</p><p id="4c6e00a4-01e6-41ca-8140-984648bdf4d4" class="">
-</p><ul id="61af07c9-5c7b-4775-929a-174108713018" class="bulleted-list"><li>Смотрим в ELF FILE</li></ul><ul id="70130427-3bda-437e-88eb-aae5b0655552" class="bulleted-list"><li>Идем в section header, проходимся по всем section entries пока не найдем strtab</li></ul><ul id="353a64d7-a193-420b-a190-bb82b6b6e85d" class="bulleted-list"><li>Потом ищем symtab и проходимся по всем символам; их тип уже указан там, а имя нужно вытащить из strtab. Необходимые нам символы - глобальные символы, у которых ELF64_ST_BIND = STB_GLOBAL, а ELF64_ST_TYPE = STT_OBJECT</li></ul><ul id="ea943e28-1411-453e-9fac-56e7a9cd6f3a" class="bulleted-list"><li>Чтобы узнать их адрес, запускаем find_functions()</li></ul><ul id="9a5b7611-4b9f-4037-908f-7f4a530a4adb" class="bulleted-list"><li>В find_functions мы значала обращаемся в секцию DWARF .debug_pubnames, содержащую таблицу с именами глобальных переменных</li></ul><ul id="75633b64-a97f-43b6-8bc7-242a539f165e" class="bulleted-list"><li>Если там мы не находим символа, то полностью разворачиваем DIE дерево через naive_address_by_fname</li></ul></details></li></ul><p id="2108f525-1bdd-4ac1-9ebf-a6b03bdcd330" class="">
+</p><ul id="61af07c9-5c7b-4775-929a-174108713018" class="bulleted-list"><li style="list-style-type:disc">Смотрим в ELF FILE</li></ul><ul id="70130427-3bda-437e-88eb-aae5b0655552" class="bulleted-list"><li style="list-style-type:disc">Идем в section header, проходимся по всем section entries пока не найдем strtab</li></ul><ul id="353a64d7-a193-420b-a190-bb82b6b6e85d" class="bulleted-list"><li style="list-style-type:disc">Потом ищем symtab и проходимся по всем символам; их тип уже указан там, а имя нужно вытащить из strtab. Необходимые нам символы - глобальные символы, у которых ELF64_ST_BIND = STB_GLOBAL, а ELF64_ST_TYPE = STT_OBJECT</li></ul><ul id="ea943e28-1411-453e-9fac-56e7a9cd6f3a" class="bulleted-list"><li style="list-style-type:disc">Чтобы узнать их адрес, запускаем find_functions()</li></ul><ul id="9a5b7611-4b9f-4037-908f-7f4a530a4adb" class="bulleted-list"><li style="list-style-type:disc">В find_functions мы значала обращаемся в секцию DWARF .debug_pubnames, содержащую таблицу с именами глобальных переменных</li></ul><ul id="75633b64-a97f-43b6-8bc7-242a539f165e" class="bulleted-list"><li style="list-style-type:disc">Если там мы не находим символа, то полностью разворачиваем DIE дерево через naive_address_by_fname</li></ul></details></li></ul><p id="2108f525-1bdd-4ac1-9ebf-a6b03bdcd330" class="">
 </p></div></article></body></html>
